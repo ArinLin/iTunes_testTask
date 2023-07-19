@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AuthViewController: UIViewController, UITextFieldDelegate {
+class AuthViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -111,14 +111,14 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func signInButtonTapped() {
-//        let navVC = UINavigationController(rootViewController: AlbumsViewController()) // переходим на AlbumsViewController()
-//        navVC.modalPresentationStyle = .fullScreen
-//        self.present(navVC, animated: true)
+        let navVC = UINavigationController(rootViewController: AlbumsViewController()) // переходим на AlbumsViewController()
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true)
     }
 }
 
 // при нажатии на return, нужно убирать клавиатуру
-extension AuthViewController {
+extension AuthViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.resignFirstResponder()
         passwordTextField.resignFirstResponder()

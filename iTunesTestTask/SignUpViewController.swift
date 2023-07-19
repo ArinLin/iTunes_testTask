@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: UIViewController {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -177,7 +177,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 
 //MARK: - UITextFieldDelegate
 
-extension SignUpViewController {
+extension SignUpViewController: UITextFieldDelegate {
     
     func textfield(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         false

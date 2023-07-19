@@ -26,6 +26,7 @@ class SongsCell: UICollectionViewCell {
     }
 }
 
+//MARK: - SetConstraints
 extension SongsCell {
     func setConstraints() {
         self.addSubview(nameSongLabel)

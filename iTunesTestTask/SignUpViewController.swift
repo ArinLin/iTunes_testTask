@@ -133,6 +133,12 @@ class SignUpViewController: UIViewController {
         setConstraints()
         setupDelegate()
         setupDataPicker()
+        
+        registerKeyboardNotification()
+    }
+    
+    deinit {
+        removeKeyboardNotification()
     }
     
     private func setupViews () {
@@ -192,6 +198,39 @@ extension SignUpViewController: UITextFieldDelegate {
         return true
     }
 }
+
+// создаем обзервер, который будет наблюдать открыта ли у нас клавиватура и, если да, то поднимать контент, чтобы мы смогли видеть поле ввода
+extension SignUpViewController {
+    private func registerKeyboardNotification() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillShow),
+                                               name: UIResponder.keyboardWillShowNotification, // мы должны понять, когда клавиатура будет подниматься. Когда клаиватура будет подниматься, будет вызываться метод keyboardWillShow
+                                               object: nil)
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(keyboardWillHide),
+                                               name: UIResponder.keyboardWillHideNotification, // мы должны понять, когда клавиатура будет подниматься. Когда клаиватура будет подниматься, будет вызываться метод keyboardWillShow
+                                               object: nil)
+    }
+    // после того, как происходит деинит контроллера, мы должны удалить нотификейшн
+    private func removeKeyboardNotification() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        let userInfo = notification.userInfo
+        let keyboardHeight = (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        scrollView.contentOffset = CGPoint(x: 0, y: keyboardHeight.height / 2)
+    }
+    
+    @objc private func keyboardWillHide(notification: Notification) {
+        scrollView.contentOffset = CGPoint.zero
+    }
+}
+
+
+//MARK: - SetConstraints
 
 extension SignUpViewController {
     private func setConstraints() {

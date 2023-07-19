@@ -58,7 +58,10 @@ class AlbumCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+}
+
+//MARK: - setupViews
+extension AlbumCell {
     private func setupViews() {
         self.backgroundColor = .clear
         self.selectionStyle = .none
@@ -74,7 +77,10 @@ class AlbumCell: UITableViewCell {
         
         self.addSubview(stackView)
     }
-    
+}
+
+//MARK: - SetConstraints
+extension AlbumCell {
     private func setConstraints() {
         NSLayoutConstraint.activate([
             albumLogo.centerYAnchor.constraint(equalTo: self.centerYAnchor),

@@ -67,6 +67,15 @@ class AboutAlbumViewController: UIViewController {
         setDelegate()
     }
     
+    private func setDelegate() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+}
+
+//MARK: - setupViews
+
+extension AboutAlbumViewController {
     private func setupViews() {
         view.backgroundColor = .white
         view.addSubview(albumLogo)
@@ -78,30 +87,6 @@ class AboutAlbumViewController: UIViewController {
         
         view.addSubview(stackView)
         view.addSubview(collectionView)
-    }
-    
-    private func setDelegate() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-    }
-}
-
-//MARK: CollectionView Delegate
-
-extension AboutAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongsCell.reuseID, for: indexPath) as! SongsCell
-        cell.nameSongLabel.text = "Name song"
-        return cell
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: collectionView.frame.width, height: 20)
     }
 }
 
@@ -124,5 +109,24 @@ extension AboutAlbumViewController {
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
         ])
+    }
+}
+
+//MARK: CollectionView Delegate
+
+extension AboutAlbumViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongsCell.reuseID, for: indexPath) as! SongsCell
+        cell.nameSongLabel.text = "Name song"
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: collectionView.frame.width, height: 20)
     }
 }

@@ -106,8 +106,8 @@ class AuthViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func signUpButtonTapped() {
-//        let signUpViewController = SignUpViewController() // переходим на SignUpViewController()
-//        self.present(signUpViewController, animated: true)
+        let signUpViewController = SignUpViewController() // переходим на SignUpViewController()
+        self.present(signUpViewController, animated: true)
     }
     
     @objc private func signInButtonTapped() {

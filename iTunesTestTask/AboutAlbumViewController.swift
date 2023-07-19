@@ -95,7 +95,7 @@ extension AboutAlbumViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SongsCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: SongsCell.reuseID, for: indexPath) as! SongsCell
         cell.nameSongLabel.text = "Name song"
         return cell
     }

@@ -50,7 +50,7 @@ class AuthViewController: UIViewController {
         button.setTitle("SignUp", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-        button.addTarget(AuthViewController.self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -61,7 +61,7 @@ class AuthViewController: UIViewController {
         button.setTitle("SignIN", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-        button.addTarget(AuthViewController.self, action: #selector (signInButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector (signInButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -78,15 +78,14 @@ class AuthViewController: UIViewController {
     }
     
     private func setupViews () {
-        title = "SignIn"
         view.backgroundColor = .white
-        textFieldsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
         
         textFieldsStackView = UIStackView(arrangedSubviews: [emailTextField, passwordTextField])
         textFieldsStackView.axis = .vertical
         textFieldsStackView.spacing = 10
         textFieldsStackView.distribution = .fillProportionally
         textFieldsStackView.translatesAutoresizingMaskIntoConstraints = false
+        
         buttonsStackView = UIStackView(arrangedSubviews: [signInButton, signUpButton])
         buttonsStackView.axis = .horizontal
         buttonsStackView.spacing = 10

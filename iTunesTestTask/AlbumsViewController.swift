@@ -68,7 +68,7 @@ extension AlbumsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AlbumCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumCell.reuseID, for: indexPath) as! AlbumCell
         return cell
     }
 }

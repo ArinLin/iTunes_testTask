@@ -119,7 +119,7 @@ class SignUpViewController: UIViewController {
         button.setTitle("SignUp", for: .normal)
         button.tintColor = .white
         button.layer.cornerRadius = 10
-        button.addTarget(SignUpViewController.self, action: #selector(signUpButtonTapped), for: .touchUpInside)
+        button.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

@@ -55,8 +55,8 @@ class AlbumsViewController: UIViewController {
     }
     
     @objc private func userInfoButtonTapped() {
-//        let userInfoViewController = UserInfoViewController() // будет контроллер юзерИнфо, чтобы отображать информацию о юзере по тапу на иконку в навбаре
-//        navigationController?.pushViewController(userInfoViewController, animated: true)
+        let userInfoViewController = UserInfoViewController() 
+        navigationController?.pushViewController(userInfoViewController, animated: true)
     }
 }
 

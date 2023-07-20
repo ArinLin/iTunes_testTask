@@ -208,6 +208,16 @@ class SignUpViewController: UIViewController {
             label.textColor = .red
         }
     }
+    
+    private func ageIsValid() -> Bool {
+        let calendar = NSCalendar.current
+        let dateNow = Date()
+        let birthday = datePicker.date
+        
+        let age = calendar.dateComponents([.year], from: birthday, to: dateNow)
+        guard let ageYear = age.year else { return false }
+        return ageYear < 18 ? false : true
+    }
 }
 
 //MARK: - UITextFieldDelegate

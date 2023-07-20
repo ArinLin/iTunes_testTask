@@ -20,7 +20,7 @@ extension String {
         case name = "[a-zA-Z]{1,}"
         case email = "[a-zA-Z0-9._]+@[a-zA-Z]+\\.[a-zA-Z]{2,4}"
         case password = "(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]).{6,}"
-        case phone = "^[0-9+]{0,1}+[0-9]{5,16}$"
+        case phone = "^[0-9+]{0,1}+[0-9]{10,10}$"
     }
     
     func isValid(validType: ValidTypes) -> Bool {

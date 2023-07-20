@@ -131,6 +131,8 @@ extension AuthViewController: UITextFieldDelegate {
     }
 }
 
+//MARK: - Keyboard Show Hide
+
 // создаем обзервер, который будет наблюдать открыта ли у нас клавиватура и, если да, то поднимать контент, чтобы мы смогли видеть поле ввода
 extension AuthViewController {
     private func registerKeyboardNotification() {

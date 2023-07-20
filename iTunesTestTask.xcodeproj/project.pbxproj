@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8401EC0B2A694AD50056E709 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401EC0A2A694AD50056E709 /* UserDefaultsManager.swift */; };
+		8401EC0E2A695D120056E709 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401EC0D2A695D120056E709 /* UserModel.swift */; };
 		84225C7E2A672E0B009D4C12 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225C7D2A672E0B009D4C12 /* SignUpViewController.swift */; };
 		84225C802A67F276009D4C12 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225C7F2A67F276009D4C12 /* AlbumsViewController.swift */; };
 		84225C822A67F7B9009D4C12 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84225C812A67F7B9009D4C12 /* UIViewControllerExt.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8401EC0A2A694AD50056E709 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		8401EC0D2A695D120056E709 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		84225C7D2A672E0B009D4C12 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		84225C7F2A67F276009D4C12 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		84225C812A67F7B9009D4C12 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -51,6 +55,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8401EC092A694AA50056E709 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8401EC0A2A694AD50056E709 /* UserDefaultsManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8401EC0C2A695CE80056E709 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8401EC0D2A695D120056E709 /* UserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		84225C8B2A686A2A009D4C12 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +108,8 @@
 				84225C892A6827E4009D4C12 /* UserInfoViewController.swift */,
 				84225C832A67F984009D4C12 /* AlbumCell.swift */,
 				84225C872A6807BB009D4C12 /* SongsCell.swift */,
+				8401EC0C2A695CE80056E709 /* Models */,
+				8401EC092A694AA50056E709 /* Services */,
 				84225C8B2A686A2A009D4C12 /* Extensions */,
 				844060972A67138B0079DA87 /* Assets.xcassets */,
 				844060992A67138B0079DA87 /* LaunchScreen.storyboard */,
@@ -168,8 +190,10 @@
 			files = (
 				844060932A67138A0079DA87 /* AuthViewController.swift in Sources */,
 				8440608F2A67138A0079DA87 /* AppDelegate.swift in Sources */,
+				8401EC0B2A694AD50056E709 /* UserDefaultsManager.swift in Sources */,
 				84225C882A6807BB009D4C12 /* SongsCell.swift in Sources */,
 				84225C822A67F7B9009D4C12 /* UIViewControllerExt.swift in Sources */,
+				8401EC0E2A695D120056E709 /* UserModel.swift in Sources */,
 				84225C8D2A686A64009D4C12 /* String + Ext.swift in Sources */,
 				84225C842A67F984009D4C12 /* AlbumCell.swift in Sources */,
 				84225C7E2A672E0B009D4C12 /* SignUpViewController.swift in Sources */,

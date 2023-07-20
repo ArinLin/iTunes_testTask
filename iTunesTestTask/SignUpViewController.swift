@@ -108,6 +108,7 @@ class SignUpViewController: UIViewController {
     private let passwordValidLabel: UILabel = {
         let label = UILabel()
         label.text = "Required field"
+        label.numberOfLines = 0
         label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -128,6 +129,8 @@ class SignUpViewController: UIViewController {
     private let datePicker = UIDatePicker()
     
     let nameValidType: String.ValidTypes = .name
+    let emailValidType: String.ValidTypes = .email
+    let passwordValidType: String.ValidTypes = .password
     
     override func viewDidLoad() {
         super.viewDidLoad ()
@@ -182,9 +185,9 @@ class SignUpViewController: UIViewController {
         print ("SignUpTapped")
     }
     
-    private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessage: String, wrongMessage: String, replacementString: String, range: NSRange) {
+    private func setTextField(textField: UITextField, label: UILabel, validType: String.ValidTypes, validMessage: String, wrongMessage: String, string: String, range: NSRange) {
         
-        let text = (textField.text ?? "") + replacementString
+        let text = (textField.text ?? "") + string
         let result: String
         
         if range.length == 1 { // в этот блок попадаем, когда удаляем символы
@@ -210,7 +213,7 @@ class SignUpViewController: UIViewController {
 
 extension SignUpViewController: UITextFieldDelegate {
     
-    func textfield(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         switch textField {
         case firstNameTextField:
@@ -219,7 +222,31 @@ extension SignUpViewController: UITextFieldDelegate {
                          validType: nameValidType,
                          validMessage: "Name is valid",
                          wrongMessage: "Only Latin-script letters",
-                         replacementString: string,
+                         string: string,
+                         range: range)
+        case secondNameTextField:
+            setTextField(textField: secondNameTextField,
+                         label: secondNameValidLabel,
+                         validType: nameValidType,
+                         validMessage: "Name is valid",
+                         wrongMessage: "Only Latin-script letters",
+                         string: string,
+                         range: range)
+        case emailTextField:
+            setTextField(textField: emailTextField,
+                         label: emailValidLabel,
+                         validType: emailValidType,
+                         validMessage: "Email is valid",
+                         wrongMessage: "Email is not valid",
+                         string: string,
+                         range: range)
+        case passwordTextField:
+            setTextField(textField: passwordTextField,
+                         label: passwordValidLabel,
+                         validType: passwordValidType,
+                         validMessage: "Password is valid",
+                         wrongMessage: "Password must contain numbers, upper and lower case letters, min 6 character",
+                         string: string,
                          range: range)
         default:
             break

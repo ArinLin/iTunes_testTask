@@ -205,6 +205,7 @@ class SignUpViewController: UIViewController {
             loginLabel.text = "Hey, \(firstNameText.capitalized)! Registration completed"
         } else {
             loginLabel.text = "Registration"
+            alertOk(title: "Error", message: "Fill in all the required fields!")
         }
     }
     

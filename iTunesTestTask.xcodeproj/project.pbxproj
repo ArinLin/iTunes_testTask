@@ -22,6 +22,7 @@
 		844060932A67138A0079DA87 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844060922A67138A0079DA87 /* AuthViewController.swift */; };
 		844060982A67138B0079DA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844060972A67138B0079DA87 /* Assets.xcassets */; };
 		8440609B2A67138B0079DA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844060992A67138B0079DA87 /* LaunchScreen.storyboard */; };
+		84F335C62A698310004609F8 /* AlertBadRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F335C52A698310004609F8 /* AlertBadRegistration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		844060972A67138B0079DA87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8440609A2A67138B0079DA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8440609C2A67138B0079DA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F335C52A698310004609F8 /* AlertBadRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBadRegistration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				8401EC0D2A695D120056E709 /* UserModel.swift */,
+				84F335C52A698310004609F8 /* AlertBadRegistration.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				84225C8A2A6827E4009D4C12 /* UserInfoViewController.swift in Sources */,
 				84225C862A6804BD009D4C12 /* AboutAlbumViewController.swift in Sources */,
 				84225C802A67F276009D4C12 /* AlbumsViewController.swift in Sources */,
+				84F335C62A698310004609F8 /* AlertBadRegistration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

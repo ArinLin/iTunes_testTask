@@ -115,10 +115,35 @@ class AuthViewController: UIViewController {
         self.present(signUpViewController, animated: true)
     }
     
-    @objc private func signInButtonTapped() {
-        let navVC = UINavigationController(rootViewController: AlbumsViewController()) // переходим на AlbumsViewController()
-        navVC.modalPresentationStyle = .fullScreen
-        self.present(navVC, animated: true)
+    @objc private func signInButtonTapped() {        
+        let mail = emailTextField.text ?? ""
+        let password = passwordTextField.text ?? ""
+        let user = findUserDataBase(mail: mail)
+        
+        if user == nil {
+            loginLabel.text = "User not found"
+            loginLabel.textColor = .red
+        } else if user?.password == password {
+            let navVC = UINavigationController(rootViewController: AlbumsViewController()) // переходим на AlbumsViewController()
+            navVC.modalPresentationStyle = .fullScreen
+            self.present(navVC, animated: true)
+        } else {
+            loginLabel.text = "Wrong password"
+            loginLabel.textColor = .red
+        }
+    }
+    // метод, который позволит найти пользователя в базе данных
+    private func findUserDataBase(mail: String) -> User? {
+        // создаем экземпляр нашей базы данных
+        let dataBase = DataBase.shared.users
+        print(dataBase)
+        
+        for user in dataBase {
+            if user.email == mail {
+                return user
+            }
+        }
+        return nil
     }
 }
 

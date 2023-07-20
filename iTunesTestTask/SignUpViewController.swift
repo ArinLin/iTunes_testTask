@@ -131,6 +131,7 @@ class SignUpViewController: UIViewController {
     let nameValidType: String.ValidTypes = .name
     let emailValidType: String.ValidTypes = .email
     let passwordValidType: String.ValidTypes = .password
+    let phoneValidType: String.ValidTypes = .phone
     
     override func viewDidLoad() {
         super.viewDidLoad ()
@@ -246,6 +247,14 @@ extension SignUpViewController: UITextFieldDelegate {
                          validType: passwordValidType,
                          validMessage: "Password is valid",
                          wrongMessage: "Password must contain numbers, upper and lower case letters, min 6 character",
+                         string: string,
+                         range: range)
+        case phoneNumberTextField:
+            setTextField(textField: phoneNumberTextField,
+                         label: phoneValidLabel,
+                         validType: phoneValidType,
+                         validMessage: "Phone is valid",
+                         wrongMessage: "Phone is not valid",
                          string: string,
                          range: range)
         default:

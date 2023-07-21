@@ -58,6 +58,28 @@ class AlbumCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func configureAlbumCell(album: Album) {
+        
+        if let urlString = album.artworkUrl100 {
+            NetworkRequest.shared.requestData(urlStripg: urlString) { [weak self] result in
+                switch result {
+                case .success(let data):
+                    let image = UIImage(data: data)
+                    self?.albumLogo.image = image
+                case .failure(let error):
+                    self?.albumLogo.image = nil
+                    print("Album logo is invalid" + error.localizedDescription)
+                }
+            }
+        } else {
+            albumLogo.image = nil
+        }
+
+        albumNameLabel.text = album.collectionName
+        artistNameLabel.text = album.artistName
+        trackCountLabel.text = "\(album.trackCount) tracks"
+    }
 }
 
 //MARK: - setupViews

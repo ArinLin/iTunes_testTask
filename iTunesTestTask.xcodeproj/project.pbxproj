@@ -23,6 +23,9 @@
 		844060982A67138B0079DA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844060972A67138B0079DA87 /* Assets.xcassets */; };
 		8440609B2A67138B0079DA87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844060992A67138B0079DA87 /* LaunchScreen.storyboard */; };
 		84F335C62A698310004609F8 /* AlertBadRegistration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F335C52A698310004609F8 /* AlertBadRegistration.swift */; };
+		84F335C82A6A66AE004609F8 /* AlbumModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F335C72A6A66AE004609F8 /* AlbumModel.swift */; };
+		84F335CB2A6A7373004609F8 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F335CA2A6A7373004609F8 /* NetworkRequest.swift */; };
+		84F335CD2A6A769E004609F8 /* NetworkDataFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F335CC2A6A769E004609F8 /* NetworkDataFetch.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		8440609A2A67138B0079DA87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8440609C2A67138B0079DA87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84F335C52A698310004609F8 /* AlertBadRegistration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBadRegistration.swift; sourceTree = "<group>"; };
+		84F335C72A6A66AE004609F8 /* AlbumModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumModel.swift; sourceTree = "<group>"; };
+		84F335CA2A6A7373004609F8 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
+		84F335CC2A6A769E004609F8 /* NetworkDataFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				8401EC0D2A695D120056E709 /* UserModel.swift */,
+				84F335C72A6A66AE004609F8 /* AlbumModel.swift */,
 				84F335C52A698310004609F8 /* AlertBadRegistration.swift */,
 			);
 			path = Models;
@@ -111,6 +118,7 @@
 				84225C892A6827E4009D4C12 /* UserInfoViewController.swift */,
 				84225C832A67F984009D4C12 /* AlbumCell.swift */,
 				84225C872A6807BB009D4C12 /* SongsCell.swift */,
+				84F335C92A6A7345004609F8 /* Network */,
 				8401EC0C2A695CE80056E709 /* Models */,
 				8401EC092A694AA50056E709 /* Services */,
 				84225C8B2A686A2A009D4C12 /* Extensions */,
@@ -119,6 +127,15 @@
 				8440609C2A67138B0079DA87 /* Info.plist */,
 			);
 			path = iTunesTestTask;
+			sourceTree = "<group>";
+		};
+		84F335C92A6A7345004609F8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				84F335CA2A6A7373004609F8 /* NetworkRequest.swift */,
+				84F335CC2A6A769E004609F8 /* NetworkDataFetch.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +209,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				844060932A67138A0079DA87 /* AuthViewController.swift in Sources */,
+				84F335C82A6A66AE004609F8 /* AlbumModel.swift in Sources */,
+				84F335CB2A6A7373004609F8 /* NetworkRequest.swift in Sources */,
 				8440608F2A67138A0079DA87 /* AppDelegate.swift in Sources */,
 				8401EC0B2A694AD50056E709 /* UserDefaultsManager.swift in Sources */,
 				84225C882A6807BB009D4C12 /* SongsCell.swift in Sources */,
@@ -203,6 +222,7 @@
 				844060912A67138A0079DA87 /* SceneDelegate.swift in Sources */,
 				84225C8A2A6827E4009D4C12 /* UserInfoViewController.swift in Sources */,
 				84225C862A6804BD009D4C12 /* AboutAlbumViewController.swift in Sources */,
+				84F335CD2A6A769E004609F8 /* NetworkDataFetch.swift in Sources */,
 				84225C802A67F276009D4C12 /* AlbumsViewController.swift in Sources */,
 				84F335C62A698310004609F8 /* AlertBadRegistration.swift in Sources */,
 			);

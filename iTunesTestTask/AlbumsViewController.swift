@@ -109,8 +109,11 @@ extension AlbumsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         70
     }
-    func tableView( tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView( _ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailAlbumViewController = AboutAlbumViewController()
+        let album = albums[indexPath.row]
+        detailAlbumViewController.album = album
+        detailAlbumViewController.title = album.artistName
         navigationController?.pushViewController(detailAlbumViewController, animated: true)
     }
 }
